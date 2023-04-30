@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EventLib\EventLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="EventLib">
+      <HintPath>..\EventLib\bin\Debug\net6.0\EventLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
