@@ -17,6 +17,18 @@ namespace EventAPP.services
             return events;
         }
 
+        public Events GetById(int id)
+        {
+            foreach(Events events in _events)
+            {
+                if(id == events.Id)
+                {
+                    return events;
+                }
+            }
+            return null;
+        }
+
         public Events Delete(int id)
         {
             Events delete = GetById(id);
@@ -27,12 +39,7 @@ namespace EventAPP.services
 
         public List<Events> GetAll()
         {
-            List<Events> list = new List<Events>();
-            foreach (Events events in _events)
-            {
-                list.Add(events);
-            }
-            return list;
+            return new List<Events>(_events);
         }
 
         public Events Update(int id, Events events)
