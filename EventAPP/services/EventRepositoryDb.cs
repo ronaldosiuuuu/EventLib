@@ -7,7 +7,7 @@ namespace EventAPP.services
     {
         public Events Create(Events events)
         {
-            String sql = "insert into Events values (@Id, @Name, @Description, @Date)";
+            String sql = "insert into Events values (@Id, @Name, @Description, @Date, @EventType)";
 
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
@@ -15,7 +15,8 @@ namespace EventAPP.services
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@Name", events.Name);
             cmd.Parameters.AddWithValue("@Description", events.Description);
-            cmd.Parameters.AddWithValue("Date", events.Date);
+            cmd.Parameters.AddWithValue("@Date", events.Date);
+            cmd.Parameters.AddWithValue("@EventType", events.EventSlags.ToString());
 
             int row = cmd.ExecuteNonQuery();
 
@@ -42,6 +43,7 @@ namespace EventAPP.services
             events.Name = reader.GetString(1);
             events.Description = reader.GetString(2);
             events.Date = reader.GetDateTime(3);
+            events.EventSlags = Enum.Parse<EventType>(reader.GetString(4));
 
 
             return events;
@@ -68,7 +70,16 @@ namespace EventAPP.services
 
         public Events GetById(int id)
         {
-            throw new NotImplementedException();
+            SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
+            conn.Open();
+
+            String sql = "Select * from Events where Id = @Id";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("id", id);  
+
+            SqlDataReader r = cmd.ExecuteReader();
         }
 
         public Events Update(int id, Events events)
