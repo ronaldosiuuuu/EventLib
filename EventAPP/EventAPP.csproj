@@ -16,10 +16,4 @@
     <ProjectReference Include="..\EventLib\EventLib.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="EventLib">
-      <HintPath>..\EventLib\bin\Debug\net6.0\EventLib.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
