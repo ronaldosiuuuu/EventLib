@@ -32,7 +32,36 @@ namespace EventAPP.services
 
         public Events Delete(int id)
         {
+            SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
+            conn.Open();
+
+
+
+            Events ev = GetById(id);
+            if (ev == null)
+            {
+                return null;
+            }
+
+            String sql = "Delete from Events where Id = @Id";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@Id", id);
+
+
+            int row = cmd.ExecuteNonQuery();
+
+            if (row == 1)
+            {
+                return ev;
+            }
+            else
+            {
+                return null;
+            }
            
+
         }
 
         private Events ReadEvents(SqlDataReader reader)

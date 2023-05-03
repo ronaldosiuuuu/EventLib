@@ -12,12 +12,12 @@ namespace EventAPP.services
         protected override void OnModelCreating(ModelBuilder modelbuilder)
         {
            modelbuilder
-                .Entity<EventEnum>()
+                .Entity<Events>()
                 .Property(e => e.EventSlags)
                 .HasConversion(
                     v => v.ToString(),
                     v => (EventType)Enum.Parse(typeof(EventType), v));
         }
-        public virtual DbSet<EventEnum> EventSlags { get; set; }    
+        public virtual DbSet<EventEnum> EventSlags { get; set; }
     }
 }

@@ -7,7 +7,13 @@ using System.Threading.Tasks;
 
 namespace EventLib.model
 {
-    public enum EventType { Andet, Fest, Spil, Sport}
+    public enum EventType { Andet, Fest, Spil, Sport }
+    public class EventEnum
+    {
+        
+
+    }
+ 
     
 
 
