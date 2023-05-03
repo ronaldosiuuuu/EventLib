@@ -32,7 +32,7 @@ namespace EventAPP.services
 
         public Events Delete(int id)
         {
-            throw new NotImplementedException();
+           
         }
 
         private Events ReadEvents(SqlDataReader reader)
@@ -77,14 +77,44 @@ namespace EventAPP.services
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
-            cmd.Parameters.AddWithValue("id", id);  
+            cmd.Parameters.AddWithValue("@Id", id);  
 
-            SqlDataReader r = cmd.ExecuteReader();
+            SqlDataReader readergetbyid = cmd.ExecuteReader();
+
+            if (readergetbyid.Read())
+            {
+                return ReadEvents(readergetbyid);
+            }
+            return null;
         }
 
         public Events Update(int id, Events events)
         {
-            throw new NotImplementedException();
+            SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
+            conn.Open();
+
+            String sql = "update Events set Name = @Name, Desciption = @Description, Date = @Date, EventType = @EventType where Id = @Id";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@Id", id);
+            cmd.Parameters.AddWithValue("@Name", events.Name);
+            cmd.Parameters.AddWithValue("@Description", events.Description);
+            cmd.Parameters.AddWithValue("@Date", events.Date);
+            cmd.Parameters.AddWithValue("@EventType", events.EventSlags.ToString());
+
+
+            int row = cmd.ExecuteNonQuery();
+
+            if(row == 1)
+            {
+                events.Id = id;
+                return events;
+            }
+            else
+            {
+                return null;
+            }   
         }
     }
 }
