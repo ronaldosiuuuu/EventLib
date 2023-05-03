@@ -18,6 +18,6 @@ namespace EventAPP.services
                     v => v.ToString(),
                     v => (EventType)Enum.Parse(typeof(EventType), v));
         }
-        public virtual DbSet<EventEnum> EventSlags { get; set; }
+        public virtual DbSet<Events> EventSlags { get; set; }    
     }
 }

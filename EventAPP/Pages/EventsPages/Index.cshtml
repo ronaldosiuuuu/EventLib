@@ -1,8 +1,8 @@
 ﻿@page
-@model EventAPP.Pages.Events.IndexModel
+@model EventAPP.Pages.EventsPages.IndexModel
 @{
 }
-<h1>Liste over eventsne</h1>
+@*<h1>Liste over eventsne</h1>
 <table class="table table-hover">
     <thead>
         <tr>
@@ -14,10 +14,9 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var d in Model.Events)
+        @foreach (var d in Model.events)
         <tr>
             <td>@d.Id</td>
-            <td>@d.Name</td>
         </tr>
     </tbody>
-</table>
+</table>*@
