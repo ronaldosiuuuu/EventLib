@@ -2,7 +2,7 @@
 @using EventLib.model;
 @model EventAPP.Pages.EventsPages.IndexModel
 @{
-    ViewData["Title"] = "Events"
+    ViewData["Title"] = "Events";
 }
 
 <h1>Oversigt over kommende events</h1>
@@ -17,28 +17,24 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var list in Model.kommendeevents)
+        @foreach (var e in @Model.kommendeevents)
         {
         
           <tr>
                     <td>
-                        @list.Id
+                        @e.Id
                     </td>
                     <td>
-                        @list.Name
+                        @e.Name
                     </td>
                     <td>
-                        @list.Description
+                        @e.Description
                     </td>
                     <td>
-                        @list.Date
+                        @e.Date
                     </td>
 
-                    @if(list is EventEnum)
-                    {
-                    EventEnum en = list as EventEnum;
-                    <td>@en.</td>
-                    }
+                  
           </tr>
    
         }
