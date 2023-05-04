@@ -12,10 +12,10 @@ namespace EventAPP.Pages.EventsPages
         {
             _service = service;
         }
-        public List<Events> events { get; set; }
+        public List<Events> kommendeevents { get; set; }
         public void OnGet()
         {
-            events = _service.GetAll();
+            kommendeevents = _service.GetAll();
         }
     }
 }
