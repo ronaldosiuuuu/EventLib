@@ -2,7 +2,7 @@
 @model EventAPP.Pages.EventsPages.CreateModel
 @{
 }
-<h1> Opret et nyt Event her </h1>
+<h1> Create a new event  </h1>
 <div class="row">
     <div class="col-md-6 ">
         <form method="post">
@@ -26,10 +26,14 @@
                 </div>
 
                 <div class="form-group">
-                <label asp-for="@Model.EventSlags" class="control-label">Event type</label><br>
-                <input asp-for="@Model.EventSlags" class="form-control" /><br>
-                <span asp-validation-for="@Model.EventSlags" class="text-danger"></span>
-                </div>
+                    <label asp-for="@Model.EventSlags" class="control-label">Event type</label><br>
+                    <select asp-for="EventSlags" class="form-control"><br>
+                    @foreach(var eve in Model.EventsTyper)
+                    {
+                        <option value="@eve">@eve</option>
+                    }
+                    </select>
+                </div><br>
 
                 <div class="form-group">
                 <label asp-for="@Model.Date" class="control-label">Event Id</label><br>

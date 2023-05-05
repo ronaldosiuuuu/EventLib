@@ -14,12 +14,12 @@ namespace EventAPP.Pages.EventsPages
             service = repo;
         }
         [BindProperty]
-        [Required(ErrorMessage ="Der skal være et ID ")]
-        [Range (0,int.MaxValue, ErrorMessage ="Må ikke være negativ ")]
+        [Required(ErrorMessage ="Must have an id ")]
+        [Range (0,int.MaxValue, ErrorMessage = "Must not be negative")]
         public int Id { get; set; }
         [BindProperty]
-        [Required(ErrorMessage ="Mangler et navn")]
-        [StringLength (100,MinimumLength =5,ErrorMessage ="Navnet skal være mellem 5 til 100 bogstaver")]
+        [Required(ErrorMessage ="Missing a name")]
+        [StringLength (100,MinimumLength =2,ErrorMessage = "The name must be between 2 and 100 letters")]
         public string Name { get; set; }
         [BindProperty]
         public string Description { get; set; }
