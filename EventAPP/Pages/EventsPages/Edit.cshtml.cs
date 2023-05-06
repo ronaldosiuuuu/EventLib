@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using EventLib;
 using EventLib.model;
+using System.Diagnostics.Tracing;
 
 namespace EventAPP.Pages.EventsPages
 {
@@ -10,18 +11,28 @@ namespace EventAPP.Pages.EventsPages
     {
         private IEventRepository _service;
 
+        public Events Events { get; set; }
+
+
         public EditModel(IEventRepository service)
         {
             _service = service;
         }
-        //public void OnGetEdit(int id)
+
+        public IActionResult OnPostEdit(int id )
+        {
+            Events = _service.GetById(id);
+            return Page();
+        }
+        //public IActionResult OnPost()
         //{
-        //    Events EditEvents = _service.GetById(id);
-        //    Id = EditEvents.Id;
-        //    Name = EditEvents.Name;
-        //    EventsSlags = EditEvents.EventSlags;
-        //    Description = EditEvents.Description;
-        //    Date = EditEvents.Date; 
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return Page();
+        //    }
+        //    _service.Update(Events);
+        //    return RedirectToPage("Index");
         //}
+
     }
 }
