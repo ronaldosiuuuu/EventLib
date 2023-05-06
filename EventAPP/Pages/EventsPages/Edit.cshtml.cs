@@ -24,15 +24,15 @@ namespace EventAPP.Pages.EventsPages
             Events = _service.GetById(id);
             return Page();
         }
-        //public IActionResult OnPost()
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return Page();
-        //    }
-        //    _service.Update(Events);
-        //    return RedirectToPage("Index");
-        //}
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            _service.Update(Events);
+            return RedirectToPage("Index");
+        }
 
     }
 }

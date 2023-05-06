@@ -49,6 +49,10 @@ namespace EventAPP.services
                 if(aEvent.Id == id)
                 {
                    aEvent.Id = events.Id;
+                    aEvent.Name = events.Name;
+                    aEvent.Description = events.Description;
+                    aEvent.Date= events.Date;
+                    aEvent.EventSlags = events.EventSlags;
                    return aEvent;
                 }
 
