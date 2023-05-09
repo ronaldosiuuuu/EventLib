@@ -41,7 +41,7 @@ namespace EventAPP.services
                     return userReader.GetBoolean(0);
                 }
                 return userReader.GetBoolean(1);
-              
+
             }
 
         }
@@ -59,6 +59,8 @@ namespace EventAPP.services
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
+                cmd.Parameters.AddWithValue("@Email", "Admin");
+
 
                 SqlDataReader userName = cmd.ExecuteReader();
 
@@ -70,28 +72,34 @@ namespace EventAPP.services
             }
         }
 
-        //public bool IsLoggedIn
-        //{
-        //    get
-        //    {
-        //        SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
-        //        conn.Open();
+        public bool IsLoggedIn
+        {
+            get
+            {
+                SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
+                conn.Open();
 
-        //        String sql = "Select * From User";
+                String sql = "Select * From User";
 
 
-        //        SqlCommand command = new SqlCommand(sql, conn);
+                SqlCommand cmd = new SqlCommand(sql, conn);
 
-                
-        //        {
-                    
-        //        }
-        //    }
-        //}
+                SqlDataReader loggedin = cmd.ExecuteReader();
+
+                if (loggedin.Read())
+                {
+                    return loggedin.GetBoolean(0);
+                }
+                return loggedin.GetBoolean(1);
+            }
+        }
 
         public void SetUserLoggedIn(string email, bool isAdmin)
         {
-            throw new NotImplementedException();
+            SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
+            conn.Open();
+
+            String sql = "Select "
         }
 
         public void UserLoggedOut()
