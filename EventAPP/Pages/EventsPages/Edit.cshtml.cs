@@ -19,7 +19,7 @@ namespace EventAPP.Pages.EventsPages
             _service = service;
         }
 
-        public IActionResult OnGetEdit(int id )
+        public IActionResult OnPostEdit(int id )
         {
             Events = _service.GetById(id);
             return Page();
@@ -30,6 +30,7 @@ namespace EventAPP.Pages.EventsPages
             {
                 return Page();
             }
+            _service.Update(Events);
             return RedirectToPage("Index");
         }
 
