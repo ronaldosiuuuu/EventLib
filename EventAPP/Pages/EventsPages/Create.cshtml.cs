@@ -8,10 +8,10 @@ namespace EventAPP.Pages.EventsPages
 {
     public class CreateModel : PageModel
     {
-        private IEventRepository service;
-        public CreateModel (IEventRepository repo)
+        private IEventRepository _service;
+        public CreateModel (IEventRepository service)
         {
-            service = repo;
+            _service = service;
         }
         [BindProperty]
         [Required(ErrorMessage ="Must have an id ")]
@@ -39,7 +39,8 @@ namespace EventAPP.Pages.EventsPages
             {
                 return Page();
             }
-
+            
+           
             Events ev = new Events(Id,Name,Description,Date,EventSlags);
             service.Create(ev);
             return RedirectToPage("Index");
