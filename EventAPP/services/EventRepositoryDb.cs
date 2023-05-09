@@ -26,7 +26,7 @@ namespace EventAPP.services
             }
             else
             {
-                return null;
+                throw new KeyNotFoundException();
             }
         }
 
@@ -38,7 +38,7 @@ namespace EventAPP.services
 
 
             Events ev = GetById(id);
-            if (ev == null)
+            if (ev is null)
             {
                 return null;
             }
