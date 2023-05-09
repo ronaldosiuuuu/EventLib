@@ -2,3 +2,52 @@
 @model EventAPP.Pages.EventsPages.EditModel
 @{
 }
+<h1> Update a Event  </h1>
+<div class="row">
+    <div class="col-md-6 ">
+        <form method="post">
+            <div class="form-group">
+
+                <label asp-for="@Model.Events.Id" class="control-label">Event Id</label><br>
+                <input asp-for="@Model.Events.Id" class="form-control" /><br>
+                <span asp-validation-for="@Model.Events.Id" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.Events.Name" class="control-label">Event name</label><br>
+                <input asp-for="@Model.Events.Name" class="form-control" /><br>
+                <span asp-validation-for="@Model.Events.Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.Events.Description" class="control-label">Event description</label><br>
+                <input asp-for="@Model.Events.Description" class="form-control" /><br>
+                <span asp-validation-for="@Model.Events.Description" class="text-danger"></span>
+            </div>
+
+            @*<div class="form-group">
+                <label asp-for="@Model.Events.EventSlags" class="control-label">Event type</label><br>
+                <select asp-for="@Model.Events.EventSlags" class="form-control">
+                    <br>
+                    @foreach (var eve in @Model.Events.EventSlags)
+                    {
+                        <option value="@eve">@eve</option>
+                    }
+                </select>
+            </div><br>*@
+
+            <div class="form-group">
+                <label asp-for="@Model.Events.Date" class="control-label">Event Id</label><br>
+                <input asp-for="@Model.Events.Date" class="form-control" /><br>
+                <span asp-validation-for="@Model.Events.Date" class="text-danger"></span>
+            </div>
+
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Save" class. />
+            </div>
+        </form>
+    </div>
+</div>

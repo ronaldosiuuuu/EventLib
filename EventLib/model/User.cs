@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EventLib.model
 {
-    public class loggedIn
+    public class User
     {
         public string Email { get; set; }
         public bool IsAdmin { get; set; }
@@ -14,7 +14,7 @@ namespace EventLib.model
         
 
 
-        public loggedIn(string email, bool isAdmin, string password)
+        public User(string email, bool isAdmin, string password)
         {
             Email = email;
             IsAdmin = isAdmin;
@@ -22,7 +22,7 @@ namespace EventLib.model
         }
 
 
-        public loggedIn():this("User@zealand.dk", true, "password")
+        public User():this("User@zealand.dk", true, "password")
         {
 
         }

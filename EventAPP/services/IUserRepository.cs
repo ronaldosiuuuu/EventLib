@@ -1,6 +1,6 @@
 ﻿namespace EventAPP.services
 {
-    public interface IUser
+    public interface IUserRepository
     {
         bool IsUserAdmin { get; }
         string UserName { get; }
@@ -8,7 +8,7 @@
 
         void SetUserLoggedIn(string email, bool isAdmin);
 
-        public bool CheckLogIn(string username, string password);
+        //public bool CheckLogIn(string username, string password);
 
         void UserLoggedOut();
     }

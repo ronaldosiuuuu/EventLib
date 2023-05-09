@@ -19,20 +19,19 @@ namespace EventAPP.Pages.EventsPages
             _service = service;
         }
 
-        public IActionResult OnPostEdit(int id )
+        public IActionResult OnGetEdit(int id )
         {
             Events = _service.GetById(id);
             return Page();
         }
-        //public IActionResult OnPost()
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return Page();
-        //    }
-        //    _service.Update(Events);
-        //    return RedirectToPage("Index");
-        //}
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            return RedirectToPage("Index");
+        }
 
     }
 }
