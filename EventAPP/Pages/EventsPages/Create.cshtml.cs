@@ -42,7 +42,7 @@ namespace EventAPP.Pages.EventsPages
             
            
             Events ev = new Events(Id,Name,Description,Date,EventSlags);
-            service.Create(ev);
+            _service.Create(ev);
             return RedirectToPage("Index");
         }
     }
