@@ -7,16 +7,16 @@ namespace EventAPP.services
     {
         public Events Create(Events events)
         {
-            String sql = "insert into Event values (@Name, @Description, @EventType, @Date)";
+            String sql = "insert into Event values (@Name, @EventType, @Description, @Date)";
 
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
 
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@Name", events.Name);
+            cmd.Parameters.AddWithValue("@EventType", events.EventSlags.ToString());
             cmd.Parameters.AddWithValue("@Description", events.Description);
             cmd.Parameters.AddWithValue("@Date", events.Date);
-            cmd.Parameters.AddWithValue("@EventType", events.EventSlags.ToString());
 
             int row = cmd.ExecuteNonQuery();
 
@@ -70,8 +70,8 @@ namespace EventAPP.services
 
             events.Id = reader.GetInt32(0);
             events.Name = reader.GetString(1);
-            events.Description = reader.GetString(3);
             events.EventSlags = Enum.Parse<EventType>(reader.GetString(2));
+            events.Description = reader.GetString(3);
             events.Date = reader.GetDateTime(4);
 
 
@@ -122,14 +122,14 @@ namespace EventAPP.services
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
 
-            String sql = "update Event set Name = @Name, Description = @Description, EventSlags = @EventType, Date = @Date where Id = @Id";
+            String sql = "update Event set Name = @Name, EventSlags = @EventType, Description = @Description, Date = @Date where Id = @Id";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
             cmd.Parameters.AddWithValue("@Id", id);
             cmd.Parameters.AddWithValue("@Name", events.Name);
-            cmd.Parameters.AddWithValue("@Description", events.Description);
             cmd.Parameters.AddWithValue("@EventType", events.EventSlags.ToString());
+            cmd.Parameters.AddWithValue("@Description", events.Description);
             cmd.Parameters.AddWithValue("@Date", events.Date);
 
 

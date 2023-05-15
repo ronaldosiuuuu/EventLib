@@ -14,7 +14,8 @@ namespace EventAPP.services
 
         private List<Events> _events = new List<Events>()
         {
-            new Events(1, "Test", "Test", DateTime.Now, EventType.Fest)
+            new Events(1, "Test", "Test", DateTime.Now, EventType.Fest),
+            new Events(2, "", "", DateTime.Now, EventType.Andet)
         };
         public Events Create(Events events)
         {
