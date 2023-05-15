@@ -1,4 +1,5 @@
 using EventAPP.services;
+using EventLib.model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
@@ -28,15 +29,13 @@ namespace EventAPP.Pages.EventsPages
 
         public IActionResult OnPost()
         {
+            _userRepository = SessionHelper.GetUser(HttpContext);
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-            if (Password != Password)
-            {
-                return Page();
-            }
-            if(Email == "Admin123@ZealandZoo.dk" && Password == "zealandzoo")
+
+            if (Email == "Admin123@ZealandZoo.dk" && Password == "zealandzoo")
             {
                 _userRepository.SetUserLoggedIn(Email, true);
             }

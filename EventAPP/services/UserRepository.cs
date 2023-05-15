@@ -63,8 +63,10 @@ namespace EventAPP.services
 
         public bool IsLoggedIn
         {
-            get { return _user.IsAdmin; }
-            set { _user.IsAdmin = value; }
+            get
+            {
+                return !string.IsNullOrEmpty(_user.Email);
+            }
         }
 
     

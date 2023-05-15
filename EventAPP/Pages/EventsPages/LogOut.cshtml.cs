@@ -1,3 +1,4 @@
+using EventAPP.services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -5,8 +6,20 @@ namespace EventAPP.Pages.EventsPages
 {
     public class LogOutModel : PageModel
     {
-        public void OnGet()
+        private IUserRepository _userRepository;
+
+        public LogOutModel()
         {
+
+        }
+    
+        public IActionResult OnGet()
+        {
+            _userRepository = SessionHelper.GetUser(HttpContext);
+            _userRepository.UserLoggedOut();
+            SessionHelper.SetUser(_userRepository, HttpContext);
+
+            return RedirectToPage("Index");
         }
     }
 }
