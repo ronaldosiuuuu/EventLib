@@ -7,7 +7,7 @@ namespace EventAPP.services
     {
         public Events Create(Events events)
         {
-            String sql = "insert into Events values (@Id, @Name, @Description, @Date, @EventType)";
+            String sql = "insert into Event values (@Name, @Description, @EventType, @Date)";
 
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
@@ -71,8 +71,8 @@ namespace EventAPP.services
             events.Id = reader.GetInt32(0);
             events.Name = reader.GetString(1);
             events.Description = reader.GetString(2);
-            events.Date = reader.GetDateTime(3);
-            events.EventSlags = Enum.Parse<EventType>(reader.GetString(4));
+            events.EventSlags = Enum.Parse<EventType>(reader.GetString(3));
+            events.Date = reader.GetDateTime(4);
 
 
             return events;
@@ -83,7 +83,7 @@ namespace EventAPP.services
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
 
-            String sql = "Select * from Events";
+            String sql = "Select * from Event";
             
             SqlCommand cmd = new SqlCommand(sql, conn); 
 

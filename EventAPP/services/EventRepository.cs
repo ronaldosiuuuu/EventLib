@@ -5,12 +5,17 @@ namespace EventAPP.services
     public class EventRepository : IEventRepository
     {
 
-        private readonly List<Events> _events;
+        //private readonly List<Events> _events;
 
-        public EventRepository()
+        //    public EventRepository()
+        //{
+        //    _events = new List<Events>();
+        //}
+
+        private List<Events> _events = new List<Events>()
         {
-            _events = new List<Events>();
-        }
+            new Events(1, "Test", "Test", DateTime.Now, EventType.Fest)
+        };
         public Events Create(Events events)
         {
             _events.Add(events);
