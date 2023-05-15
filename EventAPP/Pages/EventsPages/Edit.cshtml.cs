@@ -12,6 +12,7 @@ namespace EventAPP.Pages.EventsPages
     {
         private IEventRepository _service;
 
+        [BindProperty]
         public Events Events { get; set; }
         [BindProperty]
         public EventType EventSlags { get; set; }
@@ -24,14 +25,11 @@ namespace EventAPP.Pages.EventsPages
         }
 
 
-        public void OnGetEnum()
-        {
-            EventsTyper = Enum.GetValues<EventType>().ToList();
-        }
 
         public IActionResult OnGet(int id)
         {
             Events = _service.GetById(id);
+            EventsTyper = Enum.GetValues<EventType>().ToList();
             return Page();
 
         }
@@ -41,6 +39,7 @@ namespace EventAPP.Pages.EventsPages
             {
                 return Page();
             }
+            events.EventSlags = EventSlags;
             _service.Update(id,events);
             return RedirectToPage("Index");
         }

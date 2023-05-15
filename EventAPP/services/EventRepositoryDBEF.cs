@@ -1,53 +1,53 @@
 ﻿using EventLib.model;
 
-//namespace EventAPP.services
-//{
-//    public class EventRepositoryDBEF: IEventRepository
-//    {
-//        private EventDBContext _db = new EventDBContext();
+namespace EventAPP.services
+{
+    public class EventRepositoryDBEF : IEventRepository
+    {
+        private EventDBContext _db = new EventDBContext();
 
 
-//        public List<Events> GetAll()
-//        {
-//            return new List<Events>(_db.Events);
-//        }
+        public List<Events> GetAll()
+        {
+            return new List<Events>(_db.Events);
+        }
 
-//        public Events GetById(int id)
-//        {
-//            Events? events = GetAll().FirstOrDefault(x => x.Id == id);
-//            if (events == null)
-//            {
-//                return null;
-//            }
-//            return events;
-//        }
-//        public Events Create(Events events)
-//        {
-//            _db.Events.Add(events);
-//            _db.SaveChanges();
-//            return events;
-            
-//        }
+        public Events GetById(int id)
+        {
+            Events? events = GetAll().FirstOrDefault(x => x.Id == id);
+            if (events == null)
+            {
+                return null;
+            }
+            return events;
+        }
+        public Events Create(Events events)
+        {
+            _db.Events.Add(events);
+            _db.SaveChanges();
+            return events;
 
-//        public Events Delete(int id)
-//        {
-//            Events? events = GetById(id);
-//            _db.Events.Remove(events);
-//            _db.SaveChanges();
+        }
 
-//            return events;
-//        }
+        public Events Delete(int id)
+        {
+            Events? events = GetById(id);
+            _db.Events.Remove(events);
+            _db.SaveChanges();
 
-//        public Events Update(int id, Events events)
-//        {
-//            Events? updateEvents = GetById(id);
+            return events;
+        }
 
-//            _db.Events.Update(updateEvents);
-//            _db.SaveChanges();
+        public Events Update(int id, Events events)
+        {
+            Events? updateEvents = GetById(id);
 
-//            return events;
-//        }
+            _db.Events.Update(updateEvents);
+            _db.SaveChanges();
 
-       
-//    }
-//}
+            return events;
+        }
+
+
+    }
+}
