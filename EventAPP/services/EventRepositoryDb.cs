@@ -43,7 +43,7 @@ namespace EventAPP.services
                 return null;
             }
 
-            String sql = "Delete from Events where Id = @Id";
+            String sql = "Delete from Event where Id = @Id";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -70,8 +70,8 @@ namespace EventAPP.services
 
             events.Id = reader.GetInt32(0);
             events.Name = reader.GetString(1);
-            events.Description = reader.GetString(2);
-            events.EventSlags = Enum.Parse<EventType>(reader.GetString(3));
+            events.Description = reader.GetString(3);
+            events.EventSlags = Enum.Parse<EventType>(reader.GetString(2));
             events.Date = reader.GetDateTime(4);
 
 
@@ -102,7 +102,7 @@ namespace EventAPP.services
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
 
-            String sql = "Select * from Events where Id = @Id";
+            String sql = "Select * from Event where Id = @Id";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -122,15 +122,15 @@ namespace EventAPP.services
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
 
-            String sql = "update Events set Name = @Name, Desciption = @Description, Date = @Date, EventType = @EventType where Id = @Id";
+            String sql = "update Event set Name = @Name, Description = @Description, EventSlags = @EventType, Date = @Date where Id = @Id";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
             cmd.Parameters.AddWithValue("@Id", id);
             cmd.Parameters.AddWithValue("@Name", events.Name);
             cmd.Parameters.AddWithValue("@Description", events.Description);
-            cmd.Parameters.AddWithValue("@Date", events.Date);
             cmd.Parameters.AddWithValue("@EventType", events.EventSlags.ToString());
+            cmd.Parameters.AddWithValue("@Date", events.Date);
 
 
             int row = cmd.ExecuteNonQuery();
