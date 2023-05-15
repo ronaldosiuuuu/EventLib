@@ -27,20 +27,20 @@ using Microsoft.Data.SqlClient;
 //                conn.Open();
 
 
-//                String sql = "Select IsAdmin From User Where Email = @Email";
+//                String sql = "Select IsUserAdmin From User Where Email = @Email";
 
 //                SqlCommand cmd = new SqlCommand(sql, conn);
 
 
 //                cmd.Parameters.AddWithValue("@Email", "AdnanTest");
-                
+
 //                SqlDataReader userReader = cmd.ExecuteReader();
 
 //                if (userReader.Read())
 //                {
 //                    return userReader.GetBoolean(0);
 //                }
-//                return userReader.GetBoolean(1);
+//                return true;
 
 //            }
 
@@ -68,7 +68,7 @@ using Microsoft.Data.SqlClient;
 //                {
 //                    return userName.GetString(0);
 //                }
-//                return userName.GetString(1);
+//                return null;
 //            }
 //        }
 
@@ -79,7 +79,7 @@ using Microsoft.Data.SqlClient;
 //                SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
 //                conn.Open();
 
-//                String sql = "Select * From User";
+//                String sql = "Select * From User Where ";
 
 
 //                SqlCommand cmd = new SqlCommand(sql, conn);
@@ -90,7 +90,7 @@ using Microsoft.Data.SqlClient;
 //                {
 //                    return loggedin.GetBoolean(0);
 //                }
-//                return loggedin.GetBoolean(1);
+//                return true;
 //            }
 //        }
 
@@ -99,7 +99,7 @@ using Microsoft.Data.SqlClient;
 //            SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
 //            conn.Open();
 
-//            String sql = "Select "
+//            String sql = "Update User set
 //        }
 
 //        public void UserLoggedOut()
@@ -107,4 +107,4 @@ using Microsoft.Data.SqlClient;
 //            throw new NotImplementedException();
 //        }
 //    }
-//}
+////}

@@ -1,4 +1,6 @@
-﻿namespace EventAPP.services
+﻿using EventLib.model;
+
+namespace EventAPP.services
 {
     public interface IUserRepository
     {
@@ -8,7 +10,10 @@
 
         void SetUserLoggedIn(string email, bool isAdmin);
 
-        //public bool CheckLogIn(string username, string password);
+        public User DeleteUser(string email);
+        public List<User> GetAllUsers();
+        public User CreateUser(User newUser);
+        public User GetUserByEmail(string email);
 
         void UserLoggedOut();
     }

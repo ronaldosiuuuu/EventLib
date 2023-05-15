@@ -9,10 +9,46 @@ namespace EventAPP.services
 
         public static bool iAmAdmin = false;
 
+        private List<User> _users = new List<User>();
+
         public UserRepository()
         {
             _user = new User();
+            _users.Add(new User("Admin123@ZealandZoo.dk", true, "zealandzoo"));
+            _users.Add(new User("Khalidilmi@zealandzoo.dk", false, "khalid123"));
+            
         }
+
+        public User CreateUser(User newUser)
+        {
+            _users.Add(newUser);
+            return newUser;
+        }
+
+        public User GetUserByEmail(string email)
+        {
+            foreach(User user in _users)
+            {
+                if(user.Email == email)
+                {
+                    return user;
+                }
+            }
+            return null;
+        }
+
+        public User DeleteUser(string email)
+        {
+            User delete = GetUserByEmail(email);
+            _users.Remove(delete);
+            return delete;
+        }
+        public List<User> GetAllUsers()
+        {
+            return new List<User> { _user };
+        }
+
+
 
         public bool IsUserAdmin
         {
@@ -31,10 +67,7 @@ namespace EventAPP.services
             set { _user.IsAdmin = value; }
         }
 
-        //public bool CheckLogIn(string username, string password)
-        //{
-        //    throw new NotImplementedException();
-        //}
+    
 
         public void SetUserLoggedIn(string name, bool isAdmin)
         {
