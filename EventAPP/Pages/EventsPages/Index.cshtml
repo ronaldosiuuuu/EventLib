@@ -36,13 +36,12 @@
                     <td>
                         @e.Date
                     </td>
-                @if(Model.IsAdmin == true)
-                {
+                
                     <td>
                         <a asp-page="Delete" asp-route-id="@e.Id">Delete</a> | <a asp-page="Edit" asp-route-id="@e.Id">Edit</a>
                     </td>
                     
-                }
+               
             </tr>
    
         }
