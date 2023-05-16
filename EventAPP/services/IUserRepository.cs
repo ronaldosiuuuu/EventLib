@@ -13,6 +13,7 @@ namespace EventAPP.services
         public User DeleteUser(string email);
         public List<User> GetAllUsers();
         public User CreateUser(User newUser);
+        public bool TjekLogInd(String username, string password);
         public User GetUserByEmail(string email);
 
         void UserLoggedOut();

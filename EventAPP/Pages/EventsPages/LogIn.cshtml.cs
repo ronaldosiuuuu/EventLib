@@ -35,13 +35,18 @@ namespace EventAPP.Pages.EventsPages
                 return Page();
             }
 
-            if (Email == "Admin123@ZealandZoo.dk" && Password == "zealandzoo")
+            //if (Email == "Admin123@ZealandZoo.dk" && Password == "zealandzoo")
+            //{
+            //    _userRepository.SetUserLoggedIn(Email, true);
+            //}
+            //else
+            //{
+            //    _userRepository.SetUserLoggedIn(Email, false);
+            //}
+
+            if(!_userRepository.TjekLogInd(Email, Password))
             {
-                _userRepository.SetUserLoggedIn(Email, true);
-            }
-            else
-            {
-                _userRepository.SetUserLoggedIn(Email, false);
+                return Page();
             }
 
 

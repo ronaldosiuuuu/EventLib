@@ -69,7 +69,18 @@ namespace EventAPP.services
             }
         }
 
-    
+        public bool TjekLogInd(String username, string password)
+        {
+            foreach (User b in _users)
+                if (b.Email == username && b.Password == password)
+                {
+                    SetUserLoggedIn(b.Email, b.IsAdmin);
+                    return true;
+                }
+            return false;
+        }
+
+
 
         public void SetUserLoggedIn(string name, bool isAdmin)
         {
