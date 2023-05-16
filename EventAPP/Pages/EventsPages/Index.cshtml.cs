@@ -13,9 +13,11 @@ namespace EventAPP.Pages.EventsPages
             _service = service;
         }
         public List<Events> kommendeevents { get; set; }
+        public bool IsAdmin { get; set; }
         public void OnGet()
         {
             kommendeevents = _service.GetAll();
+            
         }
     }
 }
