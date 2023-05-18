@@ -24,7 +24,8 @@ namespace EventAPP.Pages.EventsPages
         public string Password { get; set; }
         public void OnGet()
         {
-            _userRepository = SessionHelper.GetUser(HttpContext); 
+            _userRepository = SessionHelper.GetUser(HttpContext);
+
         }
 
         public IActionResult OnPost()
@@ -48,7 +49,6 @@ namespace EventAPP.Pages.EventsPages
             {
                 return Page();
             }
-
 
             SessionHelper.SetUser(_userRepository, HttpContext);
             return RedirectToPage("Index");

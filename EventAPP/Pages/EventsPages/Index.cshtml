@@ -36,15 +36,17 @@
                     <td>
                         @e.Date
                     </td>
-                
-                    <td>
-                        <a asp-page="Delete" asp-route-id="@e.Id">Delete</a> | <a asp-page="Edit" asp-route-id="@e.Id">Edit</a>
-                    </td>
+
+                <td>
+                    <a asp-page="Delete" asp-route-id="@e.Id">Delete</a> | <a asp-page="Edit" asp-route-id="@e.Id">Edit</a>
+                </td>
+                    
                     
                
             </tr>
    
         }
+       
     </tbody>
 </table>
 

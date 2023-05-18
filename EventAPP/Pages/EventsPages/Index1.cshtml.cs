@@ -31,6 +31,7 @@ namespace EventAPP.Pages.EventsPages
                 return RedirectToPage("LogIn");
             }
             return Page();
+
         }
     }
 }
