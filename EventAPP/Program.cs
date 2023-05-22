@@ -8,6 +8,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddSession();
 
 builder.Services.AddSingleton<IEventRepository, EventRepositoryDb>();
+builder.Services.AddSingleton<IUserRepository,UserRepository>();
 
 var app = builder.Build();
 
