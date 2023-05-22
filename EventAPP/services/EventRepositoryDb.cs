@@ -3,7 +3,7 @@ using Microsoft.Data.SqlClient;
 
 namespace EventAPP.services
 {
-    public class EventRepositoryDb : IEventRepository
+    public class EventRepositoryDb :IEventRepository
     {
         public Events Create(Events events)
         {
@@ -144,6 +144,16 @@ namespace EventAPP.services
             {
                 return null;
             }   
+        }
+
+        public Events RegisterUser(int eventid, int userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool RegisterLimitation(int eventid, int userid)
+        {
+            throw new NotImplementedException();
         }
     }
 }

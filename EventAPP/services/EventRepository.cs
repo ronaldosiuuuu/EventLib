@@ -1,4 +1,5 @@
 ﻿using EventLib.model;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace EventAPP.services
 {
@@ -25,9 +26,9 @@ namespace EventAPP.services
 
         public Events GetById(int id)
         {
-            foreach(Events events in _events)
+            foreach (Events events in _events)
             {
-                if(id == events.Id)
+                if (id == events.Id)
                 {
                     return events;
                 }
@@ -50,21 +51,42 @@ namespace EventAPP.services
 
         public Events Update(int id, Events events)
         {
-            foreach(Events aEvent in _events)
+            foreach (Events aEvent in _events)
             {
-                if(aEvent.Id == id)
+                if (aEvent.Id == id)
                 {
-                   aEvent.Id = events.Id;
-                   aEvent.Name = events.Name;
-                   aEvent.Description = events.Description;
-                   aEvent.EventSlags = events.EventSlags;
-                   aEvent.Date = events.Date;
+                    aEvent.Id = events.Id;
+                    aEvent.Name = events.Name;
+                    aEvent.Description = events.Description;
+                    aEvent.EventSlags = events.EventSlags;
+                    aEvent.Date = events.Date;
 
-                   return aEvent;
+                    return aEvent;
                 }
 
             }
             return null;
         }
+
+        public Events RegisterUser(int eventid, int userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool RegisterLimitation(int eventid, int userid)
+        {
+            throw new NotImplementedException();
+        }
+
+        //    public Events RegisterUser(int eventid, int userId)
+        //    {
+        //    }
+
+        //    public bool RegisterLimitation(int eventid)
+        //    {
+
+        //    }
+        //}
     }
 }
+

@@ -48,6 +48,14 @@ namespace EventAPP.services
             return events;
         }
 
+        public Events RegisterUser(int eventid, int userId)
+        {
+            throw new NotImplementedException();
+        }
 
+        public bool RegisterLimitation(int eventid, int userid)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
