@@ -33,7 +33,7 @@ namespace EventAPP.Pages.EventsPages
                 return Page();
 
             }
-            _eventrepo
+            //_eventrepo
 
 
             return Page();
