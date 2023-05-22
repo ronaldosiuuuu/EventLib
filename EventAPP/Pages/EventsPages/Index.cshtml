@@ -36,11 +36,17 @@
                     <td>
                         @e.Date
                     </td>
-
-                <td>
-                    <a asp-page="Deltag" asp-page="Delete" asp-route-id="@e.Id">Delete</a> | <a asp-page="Edit" asp-route-id="@e.Id">Edit</a>
+                    <td>
+                        <a asp-page="/EventsPages/Tilmeld" asp-route-id="@e.Id">tilmeld</a>
+                    </td>
+                @if (Model.IsAdmin)
+                {
+                    <td>
+                        <a asp-page="Delete" asp-route-id="@e.Id">Delete</a> | <a asp-page="Edit" asp-route-id="@e.Id">Edit</a>
                 </td>
-                    
+                }
+
+
                     
                
             </tr>
@@ -49,7 +55,8 @@
        
     </tbody>
 </table>
-
+@if(Model.IsAdmin){
 <p>
     <a asp-page="Create">Opret et event</a>
 </p>
+}

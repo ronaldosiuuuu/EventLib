@@ -28,6 +28,16 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="EventsPages/LogIn"> Log Ind</a>
                         </li>
+                        @if (EventAPP.services.UserRepository.iAmAdmin)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="CreateStuderende">studerende</a>
+                            </li>
+                        }
+                        <li class="nav-item">
+                            <a class="nav-link text-dark align-content-end" asp-area="" asp-page="EventPages/Logout">logout</a>
+                        </li>
+
 
                     </ul>
                 </div>
