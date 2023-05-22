@@ -23,7 +23,7 @@ namespace EventAPP.services
         public bool IsUserAdmin
         {
             get
-            { 
+            {
                 SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
                 conn.Open();
 
@@ -95,9 +95,9 @@ namespace EventAPP.services
                 {
                     return loggedin.GetBoolean(0);
                 }
-                return IsUserLoggedIn;                  
+                return IsUserLoggedIn;
             }
-            
+
         }
 
         public void SetUserLoggedIn(string email, bool isAdmin)
