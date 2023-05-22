@@ -12,9 +12,9 @@ namespace EventAPP.services
         {
             User _user = new User();
 
-            _user.Email = reader.GetString(1);
-            _user.Password = reader.GetString(2);
-            _user.IsAdmin = reader.GetBoolean(3);
+            _user.Email = reader.GetString(2);
+            _user.Password = reader.GetString(3);
+            _user.IsAdmin = reader.GetBoolean(1);
 
 
             return _user;

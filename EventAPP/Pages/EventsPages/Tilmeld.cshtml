@@ -1,0 +1,35 @@
+﻿@page
+@model EventAPP.Pages.EventsPages.TilmeldModel
+@{
+}
+<div class="row">
+    <div class="col-md-6 ">
+        <form method="post">
+            <div class="form-group">
+
+                <label asp-for="@Model.ID" class="control-label">Event Id</label><br>
+                <input asp-for="@Model.ID" class="form-control" /><br>
+                <span asp-validation-for="@Model.ID" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.UserName" class="control-label">User Name</label><br>
+                <input asp-for="@Model.UserName" class="form-control" /><br>
+                <span asp-validation-for="@Model.UserName" class="text-danger"></span>
+            </div>
+
+@*            <div class="form-group">
+                <label asp-for="@Model.Description" class="control-label">Event description</label><br>
+                <input asp-for="@Model.Description" class="form-control" /><br>
+                <span asp-validation-for="@Model.Description" class="text-danger"></span>
+            </div>*@
+
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Tilmeld" />
+            </div>
+        </form>
+    </div>
+</div>
