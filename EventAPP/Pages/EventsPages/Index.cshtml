@@ -36,9 +36,12 @@
                     <td>
                         @e.Date
                     </td>
+                @if (Model.IsAdmin == false)
+                {
                     <td>
                         <a asp-page="/EventsPages/Tilmeld" asp-route-id="@e.Id">tilmeld</a>
                     </td>
+                }
                 @if (Model.IsAdmin)
                 {
                     <td>
