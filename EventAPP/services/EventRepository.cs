@@ -78,15 +78,19 @@ namespace EventAPP.services
             throw new NotImplementedException();
         }
 
-        //    public Events RegisterUser(int eventid, int userId)
-        //    {
-        //    }
+        public Events RegisterUser(int eventid, int userId)
+        {
 
-        //    public bool RegisterLimitation(int eventid)
-        //    {
 
-        //    }
+
+        }
+
+        //public bool RegisterLimitation(int eventid)
+        //{
+
         //}
     }
 }
+}
+
 
