@@ -19,7 +19,6 @@ namespace EventAPP.Pages.EventsPages
         public string Password { get; set; }
         [BindProperty]
         public bool IsAdmin { get; set; }
-
         public List<User> Users { get; set; }
         public void OnGet()
         {
@@ -30,7 +29,7 @@ namespace EventAPP.Pages.EventsPages
         {
             if (!ModelState.IsValid)
             {
-                Users = _userRepository.GetAllUsers();  
+                Users = _userRepository.GetAllUsers();
                 return Page();
             }
             User us = new User
@@ -39,8 +38,10 @@ namespace EventAPP.Pages.EventsPages
                 IsAdmin = IsAdmin,
                 Password = Password
             };
+
             _userRepository.CreateUser(us);
             return RedirectToPage("UserIndex");
+
         }
     }
 }

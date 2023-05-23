@@ -20,7 +20,6 @@ namespace EventAPP.Pages.EventsPages
 
         public Index1Model()
         {
-
         }
         public IActionResult OnGet()
         {
