@@ -9,6 +9,7 @@ builder.Services.AddSession();
 
 builder.Services.AddSingleton<IEventRepository, EventRepositoryDb>();
 builder.Services.AddSingleton<IUserRepository, UserRepository>();
+builder.Services.AddSingleton<IDrinkRepository, DrinkRepository>();
 
 var app = builder.Build();
 
