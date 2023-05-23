@@ -1,0 +1,42 @@
+﻿@page
+@using EventLib.model;
+@model EventAPP.Pages.EventsPages.DrinkIndexModel
+@{
+}
+<h1>Oversigt over lager</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Drink Type</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quanity</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var e in @Model.alledrinks)
+        {
+            <tr>
+                <td>
+                    @e.Id
+                </td>
+                <td>
+                    @e.Drinktype
+                </td>
+                <td>
+                    @e.Name
+                </td>
+                <td>
+                    @e.Price
+                </td>
+                <td>
+                    @e.Quanity
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    <a asp-page="CreateDrinks"> Create a drink</a>
+</p>
