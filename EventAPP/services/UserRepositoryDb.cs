@@ -181,12 +181,13 @@ namespace EventAPP.services
 
         public User CreateUser(User newUser)
         {
-            String sql = "insert into User values (@IsUserAdmin, @Password)";
+            String sql = "insert into [User] values (@IsUserAdmin,@Email,@Password)";
 
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
 
             SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@Email", newUser.Email);
             cmd.Parameters.AddWithValue("@IsUserAdmin", newUser.IsAdmin);
             cmd.Parameters.AddWithValue("@Password", newUser.Password);
 
@@ -207,7 +208,7 @@ namespace EventAPP.services
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
 
-            String sql = "Select count(*) from User where Email = @username and Password = @password";
+            String sql = "Select count (*) from [User] where Email = @username and Password = @password";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -224,7 +225,7 @@ namespace EventAPP.services
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
 
-            String sql = "Select Email from User where Email = @Email";
+            String sql = "Select Email from [User] where Email = @Email";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
