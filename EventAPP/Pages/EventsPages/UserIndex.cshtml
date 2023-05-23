@@ -18,13 +18,13 @@
             <tr>
                 <td>@users.Email</td>
                 <td>@users.Password</td>
-                <td>@(users.IsAdmin ? "Yes" : "No")</td>
+                <td>@users.IsAdmin</td>
 
-                <td><a asp-page="Delete" asp-route-id="@users.Email">Delete</a> </td>
+                <td><a asp-page="DeleteUser" asp-route-id="@users.Email">Delete</a> </td>
             </tr>
         }
     </tbody>
     </table>
 <form method="get">
-    <button asp-page="CreateUser" class="btn btn-primary">Create User</button>
+    <button asp-page="/EventsPages/CreateUser" class="btn btn-primary">Create User</button>
 </form>

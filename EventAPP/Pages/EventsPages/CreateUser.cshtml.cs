@@ -5,6 +5,7 @@ using EventLib.model;
 
 namespace EventAPP.Pages.EventsPages
 {
+
     public class CreateUserModel : PageModel
     {
         private IUserRepository _userRepository;
@@ -18,16 +19,26 @@ namespace EventAPP.Pages.EventsPages
         public string Password { get; set; }
         [BindProperty]
         public bool IsAdmin { get; set; }
+
+        public List<User> Users { get; set; }
         public void OnGet()
         {
+            Users = _userRepository.GetAllUsers();
+            IsAdmin = false;
         }
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
             {
+                Users = _userRepository.GetAllUsers();  
                 return Page();
             }
-            User us = new User (Email, IsAdmin,Password);
+            User us = new User
+            {
+                Email = Email,
+                IsAdmin = IsAdmin,
+                Password = Password
+            };
             _userRepository.CreateUser(us);
             return RedirectToPage("UserIndex");
         }

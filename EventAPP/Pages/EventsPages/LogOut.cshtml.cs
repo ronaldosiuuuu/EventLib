@@ -8,9 +8,9 @@ namespace EventAPP.Pages.EventsPages
     {
         private IUserRepository _userRepository;
 
-        public LogOutModel()
+        public LogOutModel(IUserRepository userRepository)
         {
-
+            _userRepository = userRepository;
         }
     
         public IActionResult OnGet()

@@ -1,0 +1,13 @@
+﻿@page
+@model EventAPP.Pages.EventsPages.DeleteUserModel
+@using EventLib.model;
+@{
+}
+<h1> Delete User</h1>
+
+<form method="post">
+    <div class="form-group">
+        <input type="submit"value="Delete User"asp-page-handler="DeleteUser" asp-route-id="@Model.user.Email"class="btn btn-danger"/>
+        <input type="submit" value="Regret" asp-page-handler="Regret" class="btn btn-outline-primary" />
+    </div>
+</form>

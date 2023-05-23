@@ -10,16 +10,18 @@ namespace EventAPP.Pages.EventsPages
         private IUserRepository _userRepository;
         
 
+
         public UserIndexModel(IUserRepository userRepository)
         {
             _userRepository = userRepository;
         }
-
+        [BindProperty]
         public List<User> Users { get; set; }
         public void OnGet()
         {
             Users = _userRepository.GetAllUsers();
             _userRepository = SessionHelper.GetUser(HttpContext);
+
         }
     }
 }

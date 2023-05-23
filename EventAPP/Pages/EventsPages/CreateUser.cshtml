@@ -15,7 +15,7 @@
 
             <div class="form-group">
                 <label asp-for="@Model.IsAdmin" class="control-label">Is Admin</label><br>
-                <input asp-for="@Model.IsAdmin"class="form-control" /><br>
+                <input asp-for="@Model.IsAdmin" type="checkbox" id="@Model.IsAdmin" name="IsAdmin" checked="@Model.IsAdmin"/>
                 <span asp-validation-for="@Model.IsAdmin" class="text-danger"></span>
             </div>
 

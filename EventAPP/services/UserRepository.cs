@@ -9,6 +9,7 @@ namespace EventAPP.services
 
         public static bool iAmAdmin = false;
 
+
         private List<User> _users = new List<User>();
 
         public UserRepository()
@@ -45,7 +46,7 @@ namespace EventAPP.services
         }
         public List<User> GetAllUsers()
         {
-            return new List<User> { _user };
+            return _users.ToList();
         }
 
 
