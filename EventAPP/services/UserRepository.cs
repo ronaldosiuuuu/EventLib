@@ -98,6 +98,7 @@ namespace EventAPP.services
             _user.Email = "";
             _user.IsAdmin = false;
             iAmAdmin = false;
+            loggedin = false;
         }
     }
 }
