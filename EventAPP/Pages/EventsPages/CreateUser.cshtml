@@ -1,0 +1,32 @@
+﻿@page
+@model EventAPP.Pages.EventsPages.CreateUserModel
+@{
+}
+<h1> Create a new event  </h1>
+<div class="row">
+    <div class="col-md-6 ">
+        <form method="post">
+            <div class="form-group">
+
+                <label asp-for="@Model.Email" class="control-label">Email</label><br>
+                <input asp-for="@Model.Email" class="form-control" /><br>
+                <span asp-validation-for="@Model.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.IsAdmin" class="control-label">Is Admin</label><br>
+                <input asp-for="@Model.IsAdmin" type="checkbox" id="@Model.IsAdmin" name="IsAdmin" checked="@Model.IsAdmin"/>
+                <span asp-validation-for="@Model.IsAdmin" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.Password" class="control-label">Password</label><br>
+                <input asp-for="@Model.Password" class="form-control" /><br>
+                <span asp-validation-for="@Model.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create User" />
+            </div>
+        </form>
+    </div>
+</div>

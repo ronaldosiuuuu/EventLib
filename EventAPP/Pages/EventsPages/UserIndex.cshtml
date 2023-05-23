@@ -1,0 +1,30 @@
+﻿@page
+@using EventLib.model;
+@model EventAPP.Pages.EventsPages.UserIndexModel
+@{
+}
+<h1>Oversigt over users</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Password</th>
+            <th>IsAdmin</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var users in @Model.Users)
+        {
+            <tr>
+                <td>@users.Email</td>
+                <td>@users.Password</td>
+                <td>@users.IsAdmin</td>
+
+                <td><a asp-page="DeleteUser" asp-route-id="@users.Email">Delete</a> </td>
+            </tr>
+        }
+    </tbody>
+    </table>
+<form method="get">
+    <button asp-page="/EventsPages/CreateUser" class="btn btn-primary">Create User</button>
+</form>

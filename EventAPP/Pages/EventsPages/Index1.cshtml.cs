@@ -9,7 +9,7 @@ namespace EventAPP.Pages.EventsPages
         private IUserRepository _userRepository;
 
 
-        public bool IsAdmin
+        public bool IsUserAdmin
         {
             get
             {
