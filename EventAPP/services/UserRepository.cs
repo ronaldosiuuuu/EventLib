@@ -9,6 +9,8 @@ namespace EventAPP.services
 
         public static bool iAmAdmin = false;
 
+        public static bool loggedin = false;
+
 
         private List<User> _users = new List<User>();
 
@@ -88,6 +90,7 @@ namespace EventAPP.services
             _user.Email = name;
             _user.IsAdmin = isAdmin;
             iAmAdmin = isAdmin;
+            loggedin = true;
         }
 
         public void UserLoggedOut()

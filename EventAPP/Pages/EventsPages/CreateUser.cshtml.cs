@@ -32,6 +32,7 @@ namespace EventAPP.Pages.EventsPages
                 Users = _userRepository.GetAllUsers();
                 return Page();
             }
+
             User us = new User
             {
                 Email = Email,

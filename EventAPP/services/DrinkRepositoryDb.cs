@@ -38,7 +38,7 @@ namespace EventAPP.services
             drinks.Id = reader.GetInt32(0);
             drinks.Drinktype = Enum.Parse<DrinkType>(reader.GetString(1));
             drinks.Name = reader.GetString(2);
-            drinks.Price = reader.GetInt32(3);
+            drinks.Price = reader.GetDouble(3);
             drinks.Quanity = reader.GetInt32(4);
             return drinks;
         }

@@ -25,19 +25,28 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
-                            <li class="nav-item">
+                           @* <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/EventsPages/LogIn"> Log Ind</a>
-                            </li>
+                            </li>*@
 @*                        @if (EventAPP.services.UserRepository.iAmAdmin)
                         {*@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/EventsPages/UserIndex">Users</a>
                             </li>
 @*                        }*@
+                             @if(EventAPP.services.UserRepository.loggedin){
                             <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/EventsPages/LogOut"> Log out</a>
                             </li>
-                            <li class="nav-item">
+                        }
+                        else
+                        {
+                             <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/EventsPages/LogIn"> Log Ind</a>
+                        </li>
+                            
+                        }
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/EventsPages/DrinkIndex"> Drinks</a>
                             </li>
 
