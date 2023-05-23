@@ -1,0 +1,53 @@
+﻿@page
+@model EventAPP.Pages.EventsPages.CreateDrinkModel
+@{
+}
+<h1> Create a new drink  </h1>
+<div class="row">
+    <div class="col-md-6 ">
+        <form method="post">
+            <div class="form-group">
+
+                <label asp-for="@Model.Id" class="control-label">Event Id</label><br>
+                <input asp-for="@Model.Id" class="form-control" /><br>
+                <span asp-validation-for="@Model.Id" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.Drinktype" class="control-label">Event type</label><br>
+                <select asp-for="Drinktype" class="form-control">
+                    <br>
+                    @foreach (var eve in Model.DrinkTypes)
+                    {
+                            <option value="@eve">@eve</option>
+                    }
+                </select>
+            </div><br>
+
+            <div class="form-group">
+                <label asp-for="@Model.Name" class="control-label">Event name</label><br>
+                <input asp-for="@Model.Name" class="form-control" /><br>
+                <span asp-validation-for="@Model.Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.Price" class="control-label">Event description</label><br>
+                <input asp-for="@Model.Price" class="form-control" /><br>
+                <span asp-validation-for="@Model.Price" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.Quanity" class="control-label">Event Id</label><br>
+                <input asp-for="@Model.Quanity" class="form-control" /><br>
+                <span asp-validation-for="@Model.Quanity" class="text-danger"></span>
+            </div>
+
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Create a drink" />
+            </div>
+        </form>
+    </div>
+</div>
