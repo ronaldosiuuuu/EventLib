@@ -146,12 +146,7 @@ namespace EventAPP.services
             }   
         }
 
-        public Events RegisterUser(int eventid, int userId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool RegisterLimitation(int eventid, int userid)
+        public bool RegisterAsUser(int EventId, string Email)
         {
             throw new NotImplementedException();
         }
