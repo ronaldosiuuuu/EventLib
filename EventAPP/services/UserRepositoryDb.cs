@@ -29,7 +29,7 @@ namespace EventAPP.services
 
                 bool IsUserAdmin = false;
 
-                String sql = "Select IsUserAdmin From User Where Email = @Email";
+                String sql = "Select IsUserAdmin From [User] Where Email = @Email";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -56,7 +56,7 @@ namespace EventAPP.services
                 SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
                 conn.Open();
 
-                String sql = "Select * From User Where Email = @Email";
+                String sql = "Select * From [User] Where Email = @Email";
 
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -83,7 +83,7 @@ namespace EventAPP.services
                 SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
                 conn.Open();
 
-                String sql = "Select IsUserLoggedIn from User where Email = @Email";
+                String sql = "Select IsUserLoggedIn from [User] where Email = @Email";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -105,7 +105,7 @@ namespace EventAPP.services
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
 
-            String sql = "Update User set IsUserLoggedIn = 1, IsUserAdmin = @IsUserAdmin where Email = @Email";
+            String sql = "Update [User] set IsUserLoggedIn = 1, IsUserAdmin = @IsUserAdmin where Email = @Email";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -120,7 +120,7 @@ namespace EventAPP.services
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
 
-            String sql = "Update User set IsUserLoggedIn = 0";
+            String sql = "Update [User] set IsUserLoggedIn = 0";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -140,7 +140,7 @@ namespace EventAPP.services
                 return null;
             }
 
-            String sql = "Delete from User where Email = @Email";
+            String sql = "Delete from [User] where Email = @Email";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -181,7 +181,7 @@ namespace EventAPP.services
 
         public User CreateUser(User newUser)
         {
-            String sql = "insert into User values (@IsUserAdmin, @Password)";
+            String sql = "insert into [User] values (@IsUserAdmin, @Password)";
 
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
@@ -207,7 +207,7 @@ namespace EventAPP.services
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
 
-            String sql = "Select count(*) from User where Email = @username and Password = @password";
+            String sql = "Select count(*) from [User] where Email = @username and Password = @password";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -224,7 +224,7 @@ namespace EventAPP.services
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
 
-            String sql = "Select Email from User where Email = @Email";
+            String sql = "Select Email from [User] where Email = @Email";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
