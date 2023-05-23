@@ -5,7 +5,7 @@ namespace EventAPP.services
     public class UserRepository : IUserRepository
     {
 
-        private readonly User _user;
+        private User _user;
 
         public static bool iAmAdmin = false;
 
