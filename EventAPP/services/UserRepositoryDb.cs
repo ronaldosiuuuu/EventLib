@@ -29,7 +29,7 @@ namespace EventAPP.services
 
                 bool IsUserAdmin = false;
 
-                String sql = "Select IsUserAdmin From User Where Email = @Email";
+                String sql = "Select IsUserAdmin From [User] Where Email = @Email";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -56,7 +56,7 @@ namespace EventAPP.services
                 SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
                 conn.Open();
 
-                String sql = "Select * From User Where Email = @Email";
+                String sql = "Select * From [User] Where Email = @Email";
 
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -83,7 +83,7 @@ namespace EventAPP.services
                 SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
                 conn.Open();
 
-                String sql = "Select IsUserLoggedIn from User where Email = @Email";
+                String sql = "Select IsUserLoggedIn from [User] where Email = @Email";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -105,7 +105,7 @@ namespace EventAPP.services
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
 
-            String sql = "Update User set IsUserLoggedIn = 1, IsUserAdmin = @IsUserAdmin where Email = @Email";
+            String sql = "Update [User] set IsUserLoggedIn = 1, IsUserAdmin = @IsUserAdmin where Email = @Email";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -120,7 +120,7 @@ namespace EventAPP.services
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
 
-            String sql = "Update User set IsUserLoggedIn = 0";
+            String sql = "Update [User] set IsUserLoggedIn = 0";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -225,7 +225,7 @@ namespace EventAPP.services
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
 
-            String sql = "Select Email from [User] where Email = @Email";
+            String sql = "Select * from [User] where Email = @Email";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 

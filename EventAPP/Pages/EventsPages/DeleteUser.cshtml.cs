@@ -23,9 +23,5 @@ namespace EventAPP.Pages.EventsPages
             _userRepository.DeleteUser(email);
             return RedirectToPage("UserIndex");
         }
-        public IActionResult OnPostRegret()
-        {
-            return RedirectToPage("UserIndex");
-        }
     }
 }

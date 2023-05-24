@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/EventAPP.styles.css" asp-append-version="true" />
+    <link href="~/css/stylesheet.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -21,32 +22,26 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/EventsPages/Index">Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                           @* <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/EventsPages/LogIn"> Log Ind</a>
-                            </li>*@
-@*                        @if (EventAPP.services.UserRepository.iAmAdmin)
-                        {*@
+                        </li
+                        @if (EventAPP.services.UserRepository.iAmAdmin)
+                        {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/EventsPages/UserIndex">Users</a>
                             </li>
-@*                        }*@
+                        }
                              @if(EventAPP.services.UserRepository.loggedin){
                             <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/EventsPages/LogOut"> Log out</a>
                             </li>
-                        }
-                        else
-                        {
-                             <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-page="/EventsPages/LogIn"> Log Ind</a>
-                        </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/EventsPages/LogIn"> Log Ind</a>
+                                </li>
                             
-                        }
-                        <li class="nav-item">
+                            }
+                            <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/EventsPages/DrinkIndex"> Drinks</a>
                             </li>
 
@@ -61,11 +56,44 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - EventAPP - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
+    <footer>
+        <h3>Opening Hours</h3>
+        <table>
+            <tr>
+                <th>Day</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Monday</td>
+                <td>Closed</td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>closed</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>Closed</td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td>14-22</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>14-22</td>
+            </tr>
+            <tr>
+                <td>Saturday</td>
+                <td>Closed</td>
+            </tr>
+            <tr>
+                <td>Sunday</td>
+                <td>Closed</td>
+            </tr>
+        </table>
     </footer>
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

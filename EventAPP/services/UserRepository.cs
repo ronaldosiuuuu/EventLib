@@ -32,7 +32,7 @@ namespace EventAPP.services
         {
             foreach(User user in _users)
             {
-                if(user.Email == email)
+                if(email == user.Email)
                 {
                     return user;
                 }

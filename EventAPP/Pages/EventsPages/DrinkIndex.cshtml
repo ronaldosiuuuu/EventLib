@@ -33,10 +33,19 @@
                 <td>
                     @e.Quanity
                 </td>
+                @if (Model.IsAdmin)
+                {
+                    <td>
+                        <a asp-page="DeleteDrink" asp-route-id="@e.Id">Delete</a> | <a asp-page="EditDrink" asp-route-id="@e.Id">Edit</a>
+                    </td>
+                }
+
             </tr>
         }
     </tbody>
 </table>
+@if (Model.IsAdmin){
 <p>
     <a asp-page="CreateDrink"> Create a drink</a>
 </p>
+}
