@@ -224,7 +224,6 @@ namespace EventAPP.services
         {
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
-
             String sql = "Select * from [User] where Email = @Email";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
