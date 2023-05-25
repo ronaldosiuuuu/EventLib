@@ -1,0 +1,1 @@
+﻿select count(*) from Tilmeld where EventID = 17

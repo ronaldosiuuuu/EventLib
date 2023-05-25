@@ -145,10 +145,11 @@ namespace EventAPP.services
                 return null;
             }   
         }
+        //SqlConnection connection = new SqlConnection(DbServer.GetConnectionString);
+        //connection.Open();
 
-        public bool RegisterAsUser(int EventId, string Email)
-        {
-            throw new NotImplementedException();
-        }
+        //String sql = "count(*) from Tilmeld where EventID = EventID";
+
+
     }
 }

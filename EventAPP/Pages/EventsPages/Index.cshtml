@@ -14,6 +14,8 @@
             <th>Description</th>
             <th>Event type</th>
             <th>Date</th>
+            <th>number of participants</th>
+            <th>max participants</th>
         </tr>
     </thead>
     <tbody>
@@ -36,12 +38,20 @@
                     <td>
                         @e.Date
                     </td>
+                    <td>
+                        @Model.GetAntal(e.Id)
+                    </td>
+                    <td>
+                        @e.MaxTilmeld
+                    </td>
                 @if (Model.IsAdmin == false)
+                    @if(EventAPP.services.UserRepository.loggedin){
                 {
                     <td>
                         <a asp-page="/EventsPages/Tilmeld" asp-route-id="@e.Id">tilmeld</a>
                     </td>
                 }
+                    }
                 @if (Model.IsAdmin)
                 {
                     <td>

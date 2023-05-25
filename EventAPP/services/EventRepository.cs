@@ -15,8 +15,8 @@ namespace EventAPP.services
 
         private List<Events> _events = new List<Events>()
         {
-            new Events(1, "Test", "Test", DateTime.Now, EventType.Fest),
-            new Events(2, "", "", DateTime.Now, EventType.Andet)
+            new Events(1, "Test", "Test", DateTime.Now, EventType.Fest,10),
+            new Events(2, "", "", DateTime.Now, EventType.Andet,10)
         };
         public Events Create(Events events)
         {
@@ -68,20 +68,7 @@ namespace EventAPP.services
             return null;
         }
 
-        public Events RegisterUser(int eventid, int userId)
-        {
-            throw new NotImplementedException();
-        }
 
-        public bool RegisterLimitation(int eventid, int userid)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool RegisterAsUser(int EventId, string Email)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 

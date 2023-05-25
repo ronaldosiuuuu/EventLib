@@ -72,7 +72,7 @@ namespace EventAPP.services
             }
         }
 
-        public bool TjekLogInd(String username, string password)
+        public bool TjekLogInd(string username, string password)
         {
             foreach (User b in _users)
                 if (b.Email == username && b.Password == password)

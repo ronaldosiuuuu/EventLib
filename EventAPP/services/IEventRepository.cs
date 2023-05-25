@@ -9,6 +9,6 @@ namespace EventAPP.services
         public Events Delete(int id);
         public Events Create(Events events);
         public Events Update(int id, Events events);
-        public bool RegisterAsUser(int EventId, string Email);
+
     }
 }

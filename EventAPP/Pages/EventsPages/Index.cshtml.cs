@@ -9,11 +9,14 @@ namespace EventAPP.Pages.EventsPages
     {
         private IEventRepository _service;
         private IUserRepository _userRepository;
+        private ITilmeld _tilmeldrepo;
         
         public bool IsAdmin { get; set; }
-        public IndexModel(IEventRepository service)
+
+        public IndexModel(IEventRepository service, ITilmeld tilmeldrepo)
         {
             _service = service;
+            _tilmeldrepo = tilmeldrepo;
         }
         public List<Events> kommendeevents { get; set; }
         public void OnGet()
@@ -22,6 +25,10 @@ namespace EventAPP.Pages.EventsPages
             _userRepository = SessionHelper.GetUser(HttpContext);
             IsAdmin = _userRepository.IsUserAdmin;
             
+        }
+        public int GetAntal(int id)
+        {
+            return _tilmeldrepo.AntalTilmeldte(id);
         }
     }
 }

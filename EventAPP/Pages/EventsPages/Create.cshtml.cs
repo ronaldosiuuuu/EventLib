@@ -26,6 +26,9 @@ namespace EventAPP.Pages.EventsPages
         [BindProperty]
         public DateTime Date { get; set; }
         [BindProperty]
+        public int MaxTilmeld { get; set; }
+
+        [BindProperty]
         public EventType EventSlags { get; set; }
         public List<EventType> EventsTyper { get; set; }
 
@@ -41,7 +44,7 @@ namespace EventAPP.Pages.EventsPages
             }
             
            
-            Events ev = new Events(Id,Name,Description,Date,EventSlags);
+            Events ev = new Events(Id,Name,Description,Date,EventSlags, MaxTilmeld);
             _service.Create(ev);
             return RedirectToPage("Index");
         }

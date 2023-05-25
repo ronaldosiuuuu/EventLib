@@ -11,8 +11,10 @@ namespace EventAPP.Pages.EventsPages
 
         private IUserRepository _userRepository;
 
-        public LogInModel()
+        public LogInModel(IUserRepository userrepo)
         {
+            _userRepository = userrepo;
+
         }
         [BindProperty]
         [Required]
