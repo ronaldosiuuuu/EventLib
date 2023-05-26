@@ -23,8 +23,8 @@ namespace EventAPP.Pages.EventsPages
             _userRepository = SessionHelper.GetUser(HttpContext);
             if (_userRepository.IsLoggedIn)
             {
-                _userRepository.IsUserAdmin;
-                _userRepository.IsLoggedIn;
+                //_userRepository.IsUserAdmin;
+                //_userRepository.IsLoggedIn;
 
             }
 
