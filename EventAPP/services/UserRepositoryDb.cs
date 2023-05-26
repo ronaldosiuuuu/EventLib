@@ -213,20 +213,47 @@ namespace EventAPP.services
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
 
-            string sql = "Select count (*) from [User] where Email = @Email and Password = @password";
+            String sql = "Select * from [User] where Email = @username and Password = @password";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
             cmd.Parameters.AddWithValue("@Email", username);
             cmd.Parameters.AddWithValue("@Password", password);
 
-            int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-            return count > 0;
+            var res = cmd.ExecuteReader();
+            if (res.Read())
+            {
+                User user = ReadUser(res);
+                IsUserAdmin = user.IsAdmin;
+                IsLoggedIn = true;
+                UserName = user.Email;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        public User GetUserByEmail(string email)
-        {
+            //public bool TjekLogInd(string username, string password)
+            //{
+            //    SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
+            //    conn.Open();
+
+            //    string sql = "Select count (*) from [User] where Email = @Email and Password = @password";
+
+            //    SqlCommand cmd = new SqlCommand(sql, conn);
+
+            //    cmd.Parameters.AddWithValue("@Email", username);
+            //    cmd.Parameters.AddWithValue("@Password", password);
+
+            //    int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+            //    return count > 0;
+            //}
+
+            public User GetUserByEmail(string email)
+            {
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
             String sql = "Select * from [User] where Email = @Email";
@@ -242,6 +269,6 @@ namespace EventAPP.services
                 return ReadUser(readergetbyemail);
             }
             return null;
-        }
+            }
     }
 }
