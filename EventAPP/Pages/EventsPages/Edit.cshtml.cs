@@ -17,6 +17,8 @@ namespace EventAPP.Pages.EventsPages
         [BindProperty]
         public EventType EventSlags { get; set; }
         public List<EventType> EventsTyper { get; set; }
+        [BindProperty]
+        public int MaxTilmeld { get; set; }
 
 
         public EditModel(IEventRepository service)

@@ -21,6 +21,12 @@ namespace EventAPP.Pages.EventsPages
         {
             Users = _userRepository.GetAllUsers();
             _userRepository = SessionHelper.GetUser(HttpContext);
+            if (_userRepository.IsLoggedIn)
+            {
+                _userRepository.IsUserAdmin;
+                _userRepository.IsLoggedIn;
+
+            }
 
         }
     }

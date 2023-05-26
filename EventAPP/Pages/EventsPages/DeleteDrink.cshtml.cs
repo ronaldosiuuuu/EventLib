@@ -23,7 +23,7 @@ namespace EventAPP.Pages.EventsPages
             return RedirectToPage("DrinkIndex");
         }
 
-        public IActionResult OnPostRegretr()
+        public IActionResult OnPosttilbage()
         {
             return RedirectToPage("DrinkIndex");
         }

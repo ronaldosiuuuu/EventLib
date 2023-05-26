@@ -58,10 +58,6 @@ namespace EventAPP.Pages.EventsPages
                 return RedirectToPage("Index");
             }
 
-            //Tilmeld tilmeld = new Tilmeld(UserName, ID);
-
-            //_tilmeldRepo.CreateTilmeld(tilmeld);
-
 
             return RedirectToPage("Index");
         }

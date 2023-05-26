@@ -7,7 +7,7 @@ namespace EventAPP.services
     {
         public Events Create(Events events)
         {
-            String sql = "insert into Event values (@Name, @EventType, @Description, @Date)";
+            String sql = "insert into Event values (@Name, @EventType, @Description, @Date,@MaxTilmeld)";
 
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
@@ -17,6 +17,7 @@ namespace EventAPP.services
             cmd.Parameters.AddWithValue("@EventType", events.EventSlags.ToString());
             cmd.Parameters.AddWithValue("@Description", events.Description);
             cmd.Parameters.AddWithValue("@Date", events.Date);
+            cmd.Parameters.AddWithValue("@Maxtilmeld", events.MaxTilmeld);
 
             int row = cmd.ExecuteNonQuery();
 
@@ -73,6 +74,7 @@ namespace EventAPP.services
             events.EventSlags = Enum.Parse<EventType>(reader.GetString(2));
             events.Description = reader.GetString(3);
             events.Date = reader.GetDateTime(4);
+            events.MaxTilmeld= reader.GetInt32(5);
 
 
             return events;
@@ -122,7 +124,7 @@ namespace EventAPP.services
             SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
             conn.Open();
 
-            String sql = "update Event set Name = @Name, EventSlags = @EventType, Description = @Description, Date = @Date where Id = @Id";
+            String sql = "update Event set Name = @Name, EventSlags = @EventType, Description = @Description, Date = @Date, MaxTilmeld = @MaxTilmeld where Id = @Id";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -131,6 +133,7 @@ namespace EventAPP.services
             cmd.Parameters.AddWithValue("@EventType", events.EventSlags.ToString());
             cmd.Parameters.AddWithValue("@Description", events.Description);
             cmd.Parameters.AddWithValue("@Date", events.Date);
+            cmd.Parameters.AddWithValue("@MaxTilmeld", events.MaxTilmeld);
 
 
             int row = cmd.ExecuteNonQuery();

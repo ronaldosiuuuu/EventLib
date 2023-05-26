@@ -20,85 +20,90 @@ namespace EventAPP.services
             return _user;
         }
 
-        public bool IsUserAdmin
-        {
-            get
-            {
-                SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
-                conn.Open();
+        //public bool IsUserAdmin
+        //{
+        //    get
+        //    {
+        //        SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
+        //        conn.Open();
 
-                bool IsUserAdmin = false;
+        //        bool IsUserAdmin = false;
 
-                String sql = "Select IsUserAdmin From [User] Where Email = @Email";
+        //        String sql = "Select IsUserAdmin From [User] Where Email = @Email";
 
-                SqlCommand cmd = new SqlCommand(sql, conn);
-
-
-                cmd.Parameters.AddWithValue("@Email", "Admin123@zealandzoo.dk");
-
-                SqlDataReader userReader = cmd.ExecuteReader();
-
-                if (userReader.Read())
-                {
-                    return userReader.GetBoolean(0);
-                }
-                return IsUserAdmin;
-
-            }
-
-        }
+        //        SqlCommand cmd = new SqlCommand(sql, conn);
 
 
-        public string UserName
-        {
-            get
-            {
-                SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
-                conn.Open();
+        //        cmd.Parameters.AddWithValue("@Email", "Admin123@zealandzoo.dk");
 
-                String sql = "Select * From [User] Where Email = @Email";
+        //        SqlDataReader userReader = cmd.ExecuteReader();
+
+        //        if (userReader.Read())
+        //        {
+        //            return userReader.GetBoolean(0);
+        //        }
+        //        return IsUserAdmin;
+
+        //    }
+
+        //}
+        public bool IsUserAdmin { get; private set; }
+
+        public string UserName { get; private set; }
+
+        public bool IsLoggedIn { get; private set; }
 
 
-                SqlCommand cmd = new SqlCommand(sql, conn);
+        //public string UserName
+        //{
+        //    get
+        //    {
+        //        SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
+        //        conn.Open();
 
-                cmd.Parameters.AddWithValue("@Email", "Admin123@zealandzoo.dk");
+        //        String sql = "Select * From [User] Where Email = @Email";
 
 
-                SqlDataReader userName = cmd.ExecuteReader();
+        //        SqlCommand cmd = new SqlCommand(sql, conn);
 
-                if (userName.Read())
-                {
-                    return userName.GetString(0);
-                }
-                return null;
-            }
-        }
+        //        cmd.Parameters.AddWithValue("@Email", "Admin123@zealandzoo.dk");
 
-        public bool IsLoggedIn
-        {
-            get
-            {
 
-                bool IsUserLoggedIn = false;
-                SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
-                conn.Open();
+        //        SqlDataReader userName = cmd.ExecuteReader();
 
-                String sql = "Select * from [User] where Email = @Email";
+        //        if (userName.Read())
+        //        {
+        //            return userName.GetString(0);
+        //        }
+        //        return null;
+        //    }
+        //}
 
-                SqlCommand cmd = new SqlCommand(sql, conn);
+        //public bool IsLoggedIn
+        //{
+        //    get
+        //    {
 
-                cmd.Parameters.AddWithValue("@Email", "Admin123@zealandzoo.dk");
+        //        bool IsUserLoggedIn = false;
+        //        SqlConnection conn = new SqlConnection(DbServer.GetConnectionString);
+        //        conn.Open();
 
-                SqlDataReader loggedin = cmd.ExecuteReader();
+        //        String sql = "Select * from [User] where Email = @Email";
 
-                if (loggedin.Read())
-                {
-                    return loggedin.GetBoolean(0);
-                }
-                return IsUserLoggedIn;
-            }
+        //        SqlCommand cmd = new SqlCommand(sql, conn);
 
-        }
+        //        cmd.Parameters.AddWithValue("@Email", "Admin123@zealandzoo.dk");
+
+        //        SqlDataReader loggedin = cmd.ExecuteReader();
+
+        //        if (loggedin.Read())
+        //        {
+        //            return loggedin.GetBoolean(0);
+        //        }
+        //        return IsUserLoggedIn;
+        //    }
+
+        //}
 
         public void SetUserLoggedIn(string email, bool isAdmin)
         {

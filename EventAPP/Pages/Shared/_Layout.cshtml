@@ -31,13 +31,13 @@
                             }   
                              @if(EventAPP.services.UserRepository.loggedin){
                             <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/EventsPages/LogOut"> Log out</a>
+                            <a class="nav-link text-dark login" asp-area="" asp-page="/EventsPages/LogOut"> Log out</a>
                             </li>
                             }
                             else
                             {
                                 <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/EventsPages/LogIn"> Log Ind</a>
+                                <a class="nav-link text-dark login" asp-area="" asp-page="/EventsPages/LogIn"> Log Ind</a>
                                 </li>
                             
                             }

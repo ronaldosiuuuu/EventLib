@@ -15,8 +15,8 @@ namespace EventAPP.services
 
         private List<Events> _events = new List<Events>()
         {
-            new Events(1, "Test", "Test", DateTime.Now, EventType.Fest,10),
-            new Events(2, "", "", DateTime.Now, EventType.Andet,10)
+            new Events(1, "Test", "Test", DateTime.Now, EventType.Fest,50),
+            new Events(2, "", "", DateTime.Now, EventType.Andet,50)
         };
         public Events Create(Events events)
         {
@@ -60,6 +60,7 @@ namespace EventAPP.services
                     aEvent.Description = events.Description;
                     aEvent.EventSlags = events.EventSlags;
                     aEvent.Date = events.Date;
+                    aEvent.MaxTilmeld = events.MaxTilmeld;
 
                     return aEvent;
                 }

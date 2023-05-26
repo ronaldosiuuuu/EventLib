@@ -9,3 +9,6 @@
     padding: 20px;
     text-align: center;
 }
+.a.nav-link.text-dark.login{
+    color: red;
+}
