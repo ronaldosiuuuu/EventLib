@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/EventAPP.styles.css" asp-append-version="true" />
-    <link href="~/css/stylesheet.css" rel="stylesheet" />
+    <link href="~/css/stylesheet1.css" rel="stylesheet" />
+
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">ZZC</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -21,29 +22,29 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/EventsPages/Index">Events</a>
+                            <a class="nav-link text-dark event-link" asp-area="" asp-page="/EventsPages/Index">Events</a>
                         </li>
                              @if (EventAPP.services.UserRepository.iAmAdmin)
-                             {
+                            {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/EventsPages/UserIndex">Users</a>
                             </li>
                             }   
-                             @if(EventAPP.services.UserRepository.loggedin){
                             <li class="nav-item">
-                            <a class="nav-link text-dark login" asp-area="" asp-page="/EventsPages/LogOut"> Log out</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/EventsPages/DrinkIndex"> Drinks</a>
+                            </li>
+                            @if(EventAPP.services.UserRepository.loggedin){
+                            <li class="nav-item">
+                            <a class="nav-link text-dark logout-link" asp-area="" asp-page="/EventsPages/LogOut"> Log out</a>
                             </li>
                             }
                             else
                             {
-                                <li class="nav-item">
-                                <a class="nav-link text-dark login" asp-area="" asp-page="/EventsPages/LogIn"> Log Ind</a>
-                                </li>
+                            <li class="nav-item login">
+                            <a class="nav-link text-dark login-link" asp-area="" asp-page="/EventsPages/LogIn"> Log Ind</a>
+                            </li>
                             
                             }
-                            <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/EventsPages/DrinkIndex"> Drinks</a>
-                            </li>
 
                     </ul>
                 </div>
@@ -56,7 +57,7 @@
         </main>
     </div>
 
-    <footer>
+    @*<footer>
         <h3>Opening Hours</h3>
         <table>
             <tr>
@@ -92,12 +93,14 @@
                 <td>Closed</td>
             </tr>
         </table>
-    </footer>
+    </footer>*@
 
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

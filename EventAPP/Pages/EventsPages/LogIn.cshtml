@@ -3,23 +3,30 @@
 @{
 
 }
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
-            <div class="form-group">
-                <label asp-for="@Model.Email" class="control-label">Email</label><br>
-                <input asp-for="@Model.Email" class="form-control" /><br>
-                <span asp-validation-for="@Model.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="@Model.Password" class="control-label">Password</label><br>
-                <input type="password" asp-for="@Model.Password" class="form-control" /><br>
-                <span asp-validation-for="@Model.Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Sign in" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="center-screen">
+    <div class="row wrapper">
+        <h2>Login</h2>
+        <div class="col-md-4">
+            <form method="post">
+                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                <div class="form-group box">
+                    <span class="icons"><ion-icon name="mail-sharp"></ion-icon></span>
+                    <label asp-for="@Model.Email" class="control-label">Email</label><br>
+                    <div class="textp">
+                    <input asp-for="@Model.Email" class="form-control" /><br>
+                    </div>
+                    <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group box">
+                    <span class="icons"><ion-icon name="lock-closed-sharp"></ion-icon></span></span>
+                    <label asp-for="@Model.Password" class="control-label">Password</label><br>
+                    <input type="password" asp-for="@Model.Password" class="form-control" /><br>
+                    <span asp-validation-for="@Model.Password" class="text-danger rød"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Sign in" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
 </div>

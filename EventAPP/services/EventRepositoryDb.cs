@@ -43,6 +43,10 @@ namespace EventAPP.services
             {
                 return null;
             }
+            string sql1 = "DELETE FROM Tilmeld WHERE EventID = @EventID";
+            SqlCommand sqlCmd = new SqlCommand(sql1, conn);
+            sqlCmd.Parameters.AddWithValue("@EventID", id);
+            sqlCmd.ExecuteNonQuery();
 
             String sql = "Delete from Event where Id = @Id";
 

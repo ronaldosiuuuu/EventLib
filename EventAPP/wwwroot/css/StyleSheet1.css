@@ -1,0 +1,74 @@
+﻿body {
+}
+
+.navbar-nav {
+    justify-content: flex-end;
+}
+.navbar {
+    background-color: yellow;
+}
+.wrapper {
+    position: center;
+    width: 750px;
+    height: 400px;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgb(0,0,0,5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+.wrapper h2{
+    font-size:2em;
+    color:black;
+    text-align:center;
+}
+.center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+}
+body {
+    background: url('../img/fest.jpg');
+    background-size: cover;
+    background-position: center;
+}
+/*.box {
+    position:relative;
+    width: 100%;
+    height:50px;
+    border-bottom:2px solid #162938;
+    margin:30px, 0;
+    
+}
+.box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #162938;
+    font-weight:500;
+    pointer-events:none;
+}
+.box input{
+    width:100%;
+    height:100%;
+    background:none;
+    border:none;
+    outline:none;
+}
+.box .icons {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #162938;
+    line-height: 90px;
+}*/
+
+/*.rød {
+    margin-top: 50px;*//* Adds margin at the top of the validation message */
+/*}*/
