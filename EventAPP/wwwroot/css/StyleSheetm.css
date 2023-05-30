@@ -1,0 +1,44 @@
+﻿body {
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+.cont{
+    max-width:1170px;
+    margin:auto;
+}
+.roww{
+    display:flex;
+    flex-wrap:wrap;
+}
+.khalid {
+    background-color: #24262b;
+    padding:70px 0;
+}
+
+ul {
+    list-style: none;
+}
+.footer-col{
+    width:25%;
+    padding: 0 15px;
+
+}
+.footer-col h2{
+    font-size:18px;
+    color:#ffffff;
+    text-transform:capitalize;
+    margin-bottom:30px;
+
+}
+footer.khalid {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #yourcolor;
+    color: #ffffff;
+    padding: 20px;
+}

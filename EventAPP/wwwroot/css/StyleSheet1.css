@@ -35,6 +35,13 @@
 body {
     background-image: none
 }
+.khalid {
+    background-color:#24262b;
+}
+ul{
+    list-style:none;
+}
+
 /*.box {
     position:relative;
     width: 100%;
