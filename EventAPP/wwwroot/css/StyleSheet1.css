@@ -1,4 +1,5 @@
 ﻿body {
+    background-image: none
 }
 
 .navbar-nav {
@@ -32,9 +33,7 @@
     height: 75vh;
 }
 body {
-    background: url('../img/fest.jpg');
-    background-size: cover;
-    background-position: center;
+    background-image: none
 }
 /*.box {
     position:relative;
