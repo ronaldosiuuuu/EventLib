@@ -43,15 +43,15 @@ footer.khalid {
     padding: 20px;
 }
 .horizontal-box {
-    display: flex; /* Use flexbox for horizontal layout */
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-    width: 100%; /* Set the width of the box */
-    height: 100px; /* Set the height of the box */
-    background-color: #f0f0f0; /* Set the background color of the box */
-    border: 1px solid #ccc; /* Add a border to the box */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    height: 100px; 
+    background-color: #f0f0f0; 
+    border: 1px solid #ccc; 
 }
 
 .horizontal-box p {
-margin: 0; /* Remove the default margin of the <p> element */
+margin: 0; 
 }
