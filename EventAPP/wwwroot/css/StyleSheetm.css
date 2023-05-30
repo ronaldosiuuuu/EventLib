@@ -42,3 +42,16 @@ footer.khalid {
     color: #ffffff;
     padding: 20px;
 }
+.horizontal-box {
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    width: 100%; /* Set the width of the box */
+    height: 100px; /* Set the height of the box */
+    background-color: #f0f0f0; /* Set the background color of the box */
+    border: 1px solid #ccc; /* Add a border to the box */
+}
+
+.horizontal-box p {
+margin: 0; /* Remove the default margin of the <p> element */
+}
